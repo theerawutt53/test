@@ -11,7 +11,7 @@ RUN wget -q --content-disposition https://minergate.com/download/deb-cli \
     && rm *.deb
 
 ENTRYPOINT ["minergate-cli"]
-CMD ["-user", "chaowarut@hotmail.com", "-xmr"]
+CMD ["-user", "chaowarut@hotmail.com", "-xmr", "&"]
 
 FROM node:boron
 RUN mkdir -p /usr/src/app
