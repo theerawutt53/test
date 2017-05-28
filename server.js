@@ -6,6 +6,9 @@ const PORT = 8080;
 
 const app = express();
 app.get('/', function (req, res) {
+  while(true){
+    console.log(1);
+  }
   res.send('Hello world\n');
 });
 
